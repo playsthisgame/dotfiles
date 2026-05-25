@@ -21,6 +21,8 @@ For example, `stow nvim` creates `~/.config/nvim` pointing at `dotfiles/nvim/.co
 | `nvim` | Neovim |
 | `starship` | Starship prompt |
 | `tmux` | tmux |
+| `vim` | Vim |
+| `vscode` | VS Code settings and keybindings |
 | `yazi` | Yazi file manager |
 
 ## Usage
