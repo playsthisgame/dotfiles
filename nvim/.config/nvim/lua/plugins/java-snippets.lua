@@ -1,7 +1,5 @@
 return {
 	"playsthisgame/java-snippets.nvim",
-	-- dir = "/Users/chris/workspace/dev/lua/plugins/java-snippets.nvim", -- Your path
-	-- name = "java-snippets",
 	config = function()
 		local java_snippets = require("java-snippets")
 
