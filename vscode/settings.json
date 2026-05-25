@@ -1,0 +1,88 @@
+{
+  "go.formatTool": "goimports",
+  "dart.debugExternalLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "editor.suggestSelection": "first",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 2,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "explorer.confirmDelete": false,
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "go.toolsManagement.autoUpdate": true,
+  "hardhat.telemetry": false,
+  "boot-java.rewrite.reconcile": true,
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  // for nvim4vscode
+  "editor.lineNumbers": "relative",
+  "vim.useSystemClipboard": true,
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.showTabs": "single",
+  "workbench.activityBar.location": "hidden",
+  "editor.minimap.enabled": false,
+  "java.debug.settings.showStaticVariables": false,
+  "java.debug.settings.testMethod": "org.junit.platform.console.ConsoleLauncher",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#3c3836",
+    "statusBar.foreground": "#ebdbb2",
+    "statusBar.noFolderBackground": "#3c3836",
+    "statusBar.debuggingBackground": "#ff8c1a",
+    "statusBar.debuggingForeground": "#fbf1c7"
+  },
+  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "editor.tabSize": 2,
+  "todo-tree.tree.groupBy": "none",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+
+  // vim settings
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "~/.vimrc",
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "workbench.startupEditor": "newUntitledFile",
+  "diffEditor.renderIndicators": false,
+  "files.associations": {
+    "*.tmpl": "html"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.settings.applyToAllProfiles": [],
+  "editor.snippetSuggestions": "top",
+  "redhat.telemetry.enabled": false,
+  "java.test.config": {},
+  "claudeCode.preferredLocation": "panel"
+}
