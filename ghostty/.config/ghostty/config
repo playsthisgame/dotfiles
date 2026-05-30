@@ -1,7 +1,7 @@
 theme = Gruvbox Dark
 # theme = Kanagawa Dragon
 font-family = MesloLGS Nerd Font Mono  
-font-size = 16
+font-size = 12
 gtk-titlebar = true
 
 #  cursor
