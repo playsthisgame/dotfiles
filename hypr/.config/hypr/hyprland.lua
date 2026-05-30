@@ -294,18 +294,29 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
+hl.bind("ALT + h", hl.dsp.focus({ direction = "left" }))
+hl.bind("ALT + l", hl.dsp.focus({ direction = "right" }))
+hl.bind("ALT + k", hl.dsp.focus({ direction = "up" }))
+hl.bind("ALT + j", hl.dsp.focus({ direction = "down" }))
 
-hl.bind(secondMod .. " + h", hl.dsp.window.move({ direction = "left" }))
-hl.bind(secondMod .. " + l", hl.dsp.window.move({ direction = "right" }))
-hl.bind(secondMod .. " + k", hl.dsp.window.move({ direction = "up" }))
-hl.bind(secondMod .. " + j", hl.dsp.window.move({ direction = "down" }))
+hl.bind("ALT + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
+hl.bind("ALT + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
+hl.bind("ALT + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
+hl.bind("ALT + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
 
-hl.bind(secondMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(secondMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+hl.bind("ALT + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+-- hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
+-- hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
+-- hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
+-- hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
+--
+-- hl.bind(secondMod .. " + h", hl.dsp.window.move({ direction = "left" }))
+-- hl.bind(secondMod .. " + l", hl.dsp.window.move({ direction = "right" }))
+-- hl.bind(secondMod .. " + k", hl.dsp.window.move({ direction = "up" }))
+-- hl.bind(secondMod .. " + j", hl.dsp.window.move({ direction = "down" }))
+
+-- hl.bind(secondMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
+-- hl.bind(secondMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 
 -- hl.bind("CONTROL + h", hl.dsp.focus({ direction = "left" }))
 -- hl.bind("CONTROL + l", hl.dsp.focus({ direction = "right" }))
