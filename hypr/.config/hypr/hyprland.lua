@@ -61,6 +61,8 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
   hl.exec_cmd("swaybg -i /home/chris/Pictures/wallpapers/cozy_2.jpeg -m fill")
   hl.exec_cmd("playerctld daemon")
+  hl.exec_cmd("wl-paste --type text --watch cliphist store")
+  hl.exec_cmd("wl-paste --type image --watch cliphist store")
 end)
 
 
@@ -292,6 +294,10 @@ hl.bind(secondMod .. " + Q", hl.dsp.exec_cmd(lockscreen))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(launcher))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+
+-- clipboard history
+-- hl.bind(secondMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
+hl.bind("ALT + v", hl.dsp.exec_cmd("bash -c 'cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy'"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind("ALT + h", hl.dsp.focus({ direction = "left" }))
