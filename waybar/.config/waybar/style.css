@@ -8,7 +8,7 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: JetBrainsMono Nerd Font Propo;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 window#waybar {
@@ -17,8 +17,8 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 3px;
-  margin: 7px 0px 7px 7px;
+  padding: 2px;
+  margin: 2px 0px 2px 7px;
   background: transparent;
   border-radius: 2px;
   color: white;
@@ -38,9 +38,9 @@ window#waybar {
 #memory,
 #volume {
   border-radius: 8px;
-  padding: 5px 8px;
+  padding: 3px 8px;
   background: @dark-8;
-  margin: 5px 10px 5px 0px;
+  margin: 3px 10px 3px 0px;
 }
 
 #submap,
@@ -80,7 +80,7 @@ window#waybar {
 
 #media {
   color: #42ff9f;
-  margin: 7px 0px 7px 80px;
+  margin: 4px 0px 4px 80px;
 }
 
 #custom-media-animation {
