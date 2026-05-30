@@ -60,6 +60,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("waybar")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
   hl.exec_cmd("swaybg -i /home/chris/Pictures/wallpapers/cozy_2.jpeg -m fill")
+  hl.exec_cmd("playerctld daemon")
 end)
 
 
