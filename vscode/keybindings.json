@@ -348,6 +348,23 @@
     "key": "escape",
     "command": "hideSuggestWidget",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && inDebugMode && debugState == 'stopped'"
-  }
+  },
 
+  // Toggle side panel used for AI Clients
+
+  {
+    "key": "cmd+shift+l",
+    "command": "workbench.action.focusAuxiliaryBar",
+    "when": "vim.mode == 'Normal' && !auxiliaryBarFocus"
+  },
+  {
+    "key": "cmd+shift+l",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "vim.mode == 'Normal' && auxiliaryBarFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.closeSidebar",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || inputFocus)"
+  }
 ]
