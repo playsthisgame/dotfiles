@@ -155,7 +155,17 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-# 8 = 'DELL P2422H'
-# 9 = 'DELL C2422HE'
-8 = 'DELL U2419H'
-9 = 'Vg279'
+8 = 'DELL P2422H'
+9 = 'DELL C2422HE'
+# 8 = 'DELL U2419H'
+# 9 = 'Vg279'
+
+# float these annoying microsoft popups
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+if.window-title-regex-substring = '(?i)reminders?'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.autoupdate2'
+run = 'layout floating'

@@ -52,3 +52,37 @@ vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to References" })
 -- Format file
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format buffer" })
 
+-- Seamless <C-h/j/k/l> navigation between Neovim splits and herdr panes.
+-- (vim-herdr-navigation, a herdr port of vim-tmux-navigator.) Defined here in
+-- keymaps.lua so it loads on VeryLazy and wins over LazyVim's default <C-w>h/j/k/l.
+-- Move between Neovim splits; at a split edge, hand off to herdr so focus crosses
+-- into the neighbouring herdr pane. Falls back to tmux ($TMUX) or plain wincmd.
+local function herdr_nav(wincmd, dir)
+  local prev = vim.api.nvim_get_current_win()
+  vim.cmd("wincmd " .. wincmd)
+  if vim.api.nvim_get_current_win() ~= prev then
+    return -- moved within Neovim
+  end
+  if vim.env.HERDR_PANE_ID and vim.env.HERDR_PANE_ID ~= "" then
+    local herdr = vim.env.HERDR_BIN_PATH
+    if herdr == nil or herdr == "" then
+      herdr = "herdr"
+    end
+    vim.fn.system({ herdr, "pane", "focus", "--direction", dir, "--current" })
+  elseif vim.env.TMUX and vim.env.TMUX ~= "" then
+    local tmux = { left = "Left", down = "Down", up = "Up", right = "Right" }
+    pcall(vim.cmd, "TmuxNavigate" .. tmux[dir])
+  end
+end
+
+for _, m in ipairs({
+  { "<C-h>", "h", "left" },
+  { "<C-j>", "j", "down" },
+  { "<C-k>", "k", "up" },
+  { "<C-l>", "l", "right" },
+}) do
+  vim.keymap.set("n", m[1], function()
+    herdr_nav(m[2], m[3])
+  end, { silent = true, noremap = true, desc = "Navigate " .. m[3] .. " (vim/herdr)" })
+end
+
