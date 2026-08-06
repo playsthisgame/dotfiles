@@ -14,17 +14,23 @@ For example, `stow nvim` creates `~/.config/nvim` pointing at `dotfiles/nvim/.co
 
 ## Packages
 
-| Package | Config |
-|---------|--------|
-| `aerospace` | AeroSpace window manager |
-| `ghostty` | Ghostty terminal |
-| `herdr` | herdr terminal workspace manager (see [note](#herdr-plugins)) |
-| `nvim` | Neovim |
-| `starship` | Starship prompt |
-| `tmux` | tmux |
-| `vim` | Vim |
-| `vscode` | VS Code settings and keybindings |
-| `yazi` | Yazi file manager |
+| Package | Platform | Config |
+|---------|----------|--------|
+| `aerospace` | macOS | AeroSpace window manager |
+| `ghostty` | Any | Ghostty terminal |
+| `herdr` | Any | herdr terminal workspace manager (see [note](#herdr-plugins)) |
+| `hypr` | Linux (Wayland) | Hyprland compositor, hyprlock, and power script |
+| `nvim` | Any | Neovim |
+| `rofi` | Linux (Wayland) | Rofi application launcher |
+| `starship` | Any | Starship prompt |
+| `tmux` | Any | tmux |
+| `vim` | Any | Vim |
+| `vscode` | Any | VS Code settings/keybindings — shared source (see [note](#vs-code)) |
+| `vscode-arch` | Linux | VS Code Stow package for Linux (`~/.config/Code/User`) |
+| `vscode-mac` | macOS | VS Code Stow package for macOS (`~/Library/Application Support/Code/User`) |
+| `waybar` | Linux (Wayland) | Waybar status bar |
+| `wlogout` | Linux (Wayland) | wlogout logout menu |
+| `yazi` | Any | Yazi file manager |
 
 ## Usage
 
@@ -38,6 +44,19 @@ stow */
 # Remove a package (unlink)
 stow -D nvim
 ```
+
+## VS Code
+
+`vscode/` holds the actual `settings.json` and `keybindings.json` and is the
+single source of truth. The OS-specific packages don't duplicate them — the
+files under `vscode-arch/` and `vscode-mac/` are symlinks back into `vscode/`,
+mirroring the correct `$HOME` layout for each platform:
+
+- `vscode-arch` → `~/.config/Code/User/`
+- `vscode-mac` → `~/Library/Application Support/Code/User/`
+
+Stow the package matching your OS (`stow vscode-mac` or `stow vscode-arch`);
+edit the shared files in `vscode/` and both platforms pick up the change.
 
 ## herdr plugins
 
