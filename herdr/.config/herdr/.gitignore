@@ -1,0 +1,5 @@
+# herdr runtime artifacts (machine-local, not for syncing)
+*.log
+*.sock
+session.json
+.plugins.lock
