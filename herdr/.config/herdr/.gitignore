@@ -3,3 +3,13 @@
 *.sock
 session.json
 .plugins.lock
+
+# Plugin registry: herdr regenerates this per machine with absolute paths
+# ($HOME differs between machines), so it can't be shared. Vendored plugin
+# sources live in plugins/local/; register them on a new machine with
+#   herdr plugin link ~/.config/herdr/plugins/local/<plugin>
+plugins.json
+
+# herdr's managed install dir for `herdr plugin install` — machine-local
+plugins/github/
+plugins/config/

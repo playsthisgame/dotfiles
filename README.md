@@ -18,6 +18,7 @@ For example, `stow nvim` creates `~/.config/nvim` pointing at `dotfiles/nvim/.co
 |---------|--------|
 | `aerospace` | AeroSpace window manager |
 | `ghostty` | Ghostty terminal |
+| `herdr` | herdr terminal workspace manager (see [note](#herdr-plugins)) |
 | `nvim` | Neovim |
 | `starship` | Starship prompt |
 | `tmux` | tmux |
@@ -37,3 +38,31 @@ stow */
 # Remove a package (unlink)
 stow -D nvim
 ```
+
+## herdr plugins
+
+herdr keeps its plugin registry in `~/.config/herdr/plugins.json`, which it
+regenerates per machine with **absolute** paths. Since `$HOME` differs between
+machines, that file is gitignored and each machine registers plugins itself.
+
+Vendored plugin sources are tracked under `herdr/.config/herdr/plugins/local/`.
+After `stow herdr` on a new machine, register them once:
+
+```sh
+herdr plugin link ~/.config/herdr/plugins/local/vim-herdr-navigation
+herdr server reload-config
+```
+
+Verify — the plugin should list with no warning and expose its actions:
+
+```sh
+herdr plugin list
+herdr plugin action list --plugin vim-herdr-navigation
+```
+
+If `herdr plugin list` reports `manifest unavailable`, the registry is pointing
+at a path from another machine; re-run the `link` command above.
+
+`vim-herdr-navigation` also has an editor half, already wired up in the `nvim`
+package (`nvim/.config/nvim/lua/config/keymaps.lua`), and needs `jq` on `PATH`
+for its Vim-detection.
