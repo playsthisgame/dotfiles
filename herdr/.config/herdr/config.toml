@@ -26,6 +26,21 @@ new_tab = "prefix+c"
 
 toggle_sidebar = "prefix+p"
 
+# herdr-file-viewer: read-only git-aware file browser.
+# Installed per-machine with `herdr plugin install smarzban/herdr-file-viewer`
+# (lands in the gitignored plugins/github/, so only these binds are shared).
+[[keys.command]]
+key = "prefix+f"
+type = "plugin_action"
+command = "herdr-file-viewer.open-file-viewer"
+description = "open file viewer in split"
+
+[[keys.command]]
+key = "prefix+F"
+type = "plugin_action"
+command = "herdr-file-viewer.open-file-viewer-tab"
+description = "open file viewer in tab"
+
 # vim-herdr-navigation: Vim-aware ctrl+h/j/k/l navigation.
 # In a Vim/Neovim pane the key is forwarded to Vim (which crosses back into
 # herdr at a split edge); in any other pane it just moves herdr's pane focus.

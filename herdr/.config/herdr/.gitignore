@@ -10,6 +10,11 @@ session.json
 #   herdr plugin link ~/.config/herdr/plugins/local/<plugin>
 plugins.json
 
-# herdr's managed install dir for `herdr plugin install` — machine-local
+# herdr's managed install dir for `herdr plugin install` — machine-local.
+# Binds in config.toml reference these plugins by id, so a new machine needs:
+#   herdr plugin install smarzban/herdr-file-viewer --yes
+#   brew install glow git-delta bat        # optional renderers
+# Skipping this does not error — `herdr config check` still reports "ok" and
+# the plugin_action binds just silently do nothing.
 plugins/github/
 plugins/config/
