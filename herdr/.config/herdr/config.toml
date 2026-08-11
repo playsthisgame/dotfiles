@@ -1,3 +1,4 @@
+onboarding = false
 [theme]
 name = "gruvbox"
 auto_switch = false
@@ -67,3 +68,16 @@ key = "ctrl+l"
 type = "plugin_action"
 command = "vim-herdr-navigation.right"
 description = "navigate right (vim/herdr)"
+
+# ichigo config
+[[keys.command]]
+key = "prefix+i"
+type = "plugin_action"
+command = "herdr-api-client.open"
+description = "open API client in split"
+
+[[keys.command]]
+key = "prefix+shift+i"
+type = "plugin_action"
+command = "herdr-api-client.open-tab"
+description = "open API client in tab"
