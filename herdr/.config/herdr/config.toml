@@ -81,3 +81,8 @@ key = "prefix+shift+i"
 type = "plugin_action"
 command = "herdr-api-client.open-tab"
 description = "open API client in tab"
+
+[experimental]
+# Local Kitty graphics rendering for attached clients (needed for image
+# responses in ichigo, and any other TUI that draws images).
+kitty_graphics = true
