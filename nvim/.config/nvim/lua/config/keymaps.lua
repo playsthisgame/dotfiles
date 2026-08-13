@@ -26,8 +26,10 @@ keymap.set("n", "<leader>sh", "<C-w><5")    -- make split windows width smaller
 -- Tab management
 keymap.set("n", "<leader>to", ":tabnew<CR>")   -- open a new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close a tab
-keymap.set("n", "<tab>", ":tabn<CR>")          -- next tab
-keymap.set("n", "<S-tab>", ":tabp<CR>")        -- previous tab
+-- Disabled so <C-i> is free for the native jumplist "forward" motion.
+-- Native gt (next) / gT (previous) still switch tabs. Re-enable if wanted:
+-- keymap.set("n", "<tab>", ":tabn<CR>")          -- next tab
+-- keymap.set("n", "<S-tab>", ":tabp<CR>")        -- previous tab
 
 -- Buffer Navigation
 keymap.set("n", "]b", ":bnext<CR>", { desc = "Next buffer" })
