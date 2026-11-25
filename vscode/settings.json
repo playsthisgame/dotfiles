@@ -1,4 +1,5 @@
 {
+  "terminal.integrated.enableImages": true,
   "go.formatTool": "goimports",
   "dart.debugExternalLibraries": false,
   "dart.debugSdkLibraries": false,

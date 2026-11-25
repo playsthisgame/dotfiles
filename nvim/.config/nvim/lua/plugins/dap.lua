@@ -46,7 +46,14 @@ return {
       {
         "<leader>dt",
         function()
-          require("dap").terminate()
+          local dap = require("dap")
+          dap.terminate({}, { terminateDebuggee = true }, function()
+            -- fall back to a hard disconnect in case terminate was ignored
+            if dap.session() then
+              dap.disconnect({ terminateDebuggee = true })
+            end
+            dap.close()
+          end)
         end,
         desc = "Terminate",
       },

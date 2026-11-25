@@ -82,6 +82,33 @@ type = "plugin_action"
 command = "herdr-api-client.open-tab"
 description = "open API client in tab"
 
+# sessionizer: fuzzy pickers for project + git worktree workspaces.
+# Installed per-machine with `herdr plugin install andrewchng/herdr-sessionizer`.
+[[keys.command]]
+key = "prefix+w"
+type = "plugin_action"
+command = "sessionizer.open"
+description = "open project workspace"
+
+[[keys.command]]
+key = "prefix+W"
+type = "plugin_action"
+command = "sessionizer.worktree-open"
+description = "open worktree workspace"
+
+# herdr x
+[[keys.command]]
+key = "prefix+alt+x"
+type = "plugin_action"
+command = "herdr-x.browse"
+description = "open x.com in a split"
+
+[[keys.command]]
+key = "prefix+alt+p"
+type = "plugin_action"
+command = "herdr-x.compose"
+description = "draft an x.com post"
+
 [experimental]
 # Local Kitty graphics rendering for attached clients (needed for image
 # responses in ichigo, and any other TUI that draws images).
